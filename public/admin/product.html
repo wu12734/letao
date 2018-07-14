@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" href="css/common.css">
 </head>
-
 <body>
-	<div class="lt-aside">
+    <div class="lt-aside">
 		<a href="index.html" class="title">首页</a>
 		<div class="user">
 			<img src="images/default.jpg" alt="">
@@ -25,7 +23,7 @@
 			<li>
 				<a href="javascript:;">
 					<span class="glyphicon glyphicon-th-list"></span> 分类管理</a>
-				<ul style="display: none" class="child">
+				<ul class="child">
 					<li>
 						<a href="first.html">一级分类</a>
 					</li>
@@ -35,7 +33,7 @@
 				</ul>
 			</li>
 			<li>
-				<a href="product.html">
+				<a class="active" href="product.html">
 					<span class="glyphicon glyphicon-tags"></span> 商品管理</a>
 			</li>
 		</ul>
@@ -49,10 +47,30 @@
 			<ol class="breadcrumb">
 				<li>
 					<a href="#">管理系统</a>
-				</li>
-				<li class="active">首页</li>
-			</ol>
-		</div>
+                </li>
+				<li class="active">商品管理</li>
+            </ol>
+            <div>
+                <button class="btn btn-default mb-20">添加商品</button>
+            </div>
+            <div>
+                <table class="table text-center table-bordered">
+                    <thead>
+                        <tr>
+                            <td>序号</td>
+                            <td>商品名称</td>
+                            <td>商品描述</td>
+                            <td>商品库存</td>
+                            <td>商品尺寸</td>
+                            <td>商品状态</td>
+                            <td>操作</td>
+                        </tr>
+                    </thead>
+                    
+                </table>
+            </div>
+        </div>
+        
 	</div>
 </body>
 <script src="lib/jquery/jquery.js"></script>

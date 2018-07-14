@@ -16,6 +16,15 @@ html {
 }
 body {
     padding-left: 180px;
+    transition: all 1s;
+}
+.lt-aside.show {
+    
+    left: -180px;
+}
+body.show {
+    
+    padding: 0;
 }
 .lt-aside{
     position: fixed;
@@ -24,6 +33,7 @@ body {
     height: 100%;
     background: #222d32;
     color: #fff;
+    transition: all 1s;
     a,
     a:link,
     a:visited,
@@ -33,6 +43,10 @@ body {
         text-align: center;
         text-decoration: none;
         color: inherit;
+    }
+    a.active {
+        background: #1d1f21;
+        border-left: 3px solid #069;
     }
     >a {
         width: 180px;
@@ -62,13 +76,17 @@ body {
                 height: 40px;
                 line-height: 40px;
             }
+            ul {
+                a {
+                    padding-left: 20px;
+                }
+            }
         }
     }
 }
 
 .lt-main {
     width: 100%;
-    background: pink;
     height: 100%;
     .top {
         height: 50px;

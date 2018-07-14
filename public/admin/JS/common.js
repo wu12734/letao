@@ -1,0 +1,17 @@
+$(function(){
+    $(document).ajaxStart(function(){
+        NProgress.start();
+    })
+    $(document).ajaxStop(function(){
+        NProgress.done();
+    })
+    //二级菜单上下
+    $(".child").prev().click(function(){
+        $(".child").slideToggle();
+    })
+    //侧边栏显示隐藏
+    $(".icon-menu").click(function(){
+        $(".lt-aside").toggleClass("show");
+        $("body").toggleClass("show");
+    })
+})

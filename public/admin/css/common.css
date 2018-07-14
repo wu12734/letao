@@ -15,6 +15,13 @@ html {
 }
 body {
   padding-left: 180px;
+  transition: all 1s;
+}
+.lt-aside.show {
+  left: -180px;
+}
+body.show {
+  padding: 0;
 }
 .lt-aside {
   position: fixed;
@@ -23,6 +30,7 @@ body {
   height: 100%;
   background: #222d32;
   color: #fff;
+  transition: all 1s;
 }
 .lt-aside a,
 .lt-aside a:link,
@@ -33,6 +41,10 @@ body {
   text-align: center;
   text-decoration: none;
   color: inherit;
+}
+.lt-aside a.active {
+  background: #1d1f21;
+  border-left: 3px solid #069;
 }
 .lt-aside > a {
   width: 180px;
@@ -60,9 +72,11 @@ body {
   height: 40px;
   line-height: 40px;
 }
+.lt-aside .lt-nav li ul a {
+  padding-left: 20px;
+}
 .lt-main {
   width: 100%;
-  background: pink;
   height: 100%;
 }
 .lt-main .top {
@@ -78,4 +92,7 @@ body {
 }
 .lt-main .lt-content {
   padding: 20px;
+}
+.mb-20 {
+  margin-bottom: 20px;
 }
