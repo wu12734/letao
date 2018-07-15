@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet" href="lib/nprogress/nprogress.css">
 	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/user.css">
 </head>
+
 <body>
-    <div class="lt-aside">
+	<div class="lt-aside">
 		<a href="index.html" class="title">首页</a>
 		<div class="user">
 			<img src="images/default.jpg" alt="">
@@ -38,6 +42,7 @@
 			</li>
 		</ul>
 	</div>
+
 	<div class="lt-main">
 		<div class="top">
 			<a href="javascript:;" class="icon-menu glyphicon glyphicon-align-justify pull-left"></a>
@@ -49,25 +54,96 @@
 					<a href="#">管理系统</a>
 				</li>
 				<li class="active">用户管理</li>
-            </ol>
-            <div>
-                <table class="table text-center table-bordered">
+			</ol>
+			<div>
+				<table class="table text-center table-bordered">
 					<thead>
 						<tr>
-                        	<td>序号</td>
-                        	<td>用户名</td>
-                        	<td>手机号</td>
-                        	<td>状态</td>
-                        	<td>操作</td>
-                    	</tr>
+							<td>序号</td>
+							<td>用户名</td>
+							<td>手机号</td>
+							<td>状态</td>
+							<td>操作</td>
+						</tr>
 					</thead>
-                    
-                </table>
-            </div>
-        </div>
-        
+					<tbody>
+						<!-- 模板 -->
+					</tbody>
+				</table>
+
+				<div class="text-right">
+					<ul class="pagination">
+						<li>
+							<a href="#" aria-label="Previous">
+								<span aria-hidden="true">&laquo;</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">1</a>
+						</li>
+						<li>
+							<a href="#" aria-label="Next">
+								<span aria-hidden="true">&raquo;</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
 	</div>
+
+	<!-- 模态框 -->
+	<div class="modal user-modal fade bs-example-modal-sm" tabindex="-1">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">
+						<span>&times;</span>
+					</button>
+					<h4 class="modal-title">温馨提示</h4>
+				</div>
+				<div class="modal-body">
+					<p class="text-danger"><span class="glyphicon glyphicon-info-sign"></span>你确定要执行此操作吗？</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary btn-yes">确定</button>
+				</div>
+			</div>
+			<!-- /.modal-content -->
+		</div>
+		<!-- /.modal-dialog -->
+	</div>
+	<!-- /.modal -->
+
+
 </body>
+
+<script type="text/html" id="tpl">
+	{{each rows v i}}
+	<tr>
+		<td>{{(page-1) * size + i + 1}}</td>
+		<td>{{v.username}}</td>
+		<td>{{v.mobile}}</td>
+		<td>{{v.isDelete == 1?"正常":"禁用"}}</td>
+		<td data-id="{{v.id}}">
+			{{if v.isDelete == 1}}
+			<button class="btn btn-danger btn-sm">禁用</button>
+			{{else}}
+			<button class="btn btn-success btn-sm">启用</button>
+			{{/if}}
+		</td>
+	</tr>
+	{{/each}}
+</script>
+
 <script src="lib/jquery/jquery.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script src="lib/nprogress/nprogress.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.js"></script>
 <script src="JS/common.js"></script>
+<script src="JS/user.js"></script>
+
 </html>

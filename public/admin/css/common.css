@@ -93,6 +93,12 @@ body.show {
 .lt-main .lt-content {
   padding: 20px;
 }
+tbody tr td {
+  vertical-align: middle !important;
+}
 .mb-20 {
   margin-bottom: 20px;
+}
+tbody img {
+  display: inline-block;
 }
